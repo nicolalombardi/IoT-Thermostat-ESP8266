@@ -28,7 +28,7 @@ void sendDataToServer(float sensor_temperature_avg, int is_on){
   JSONEncoder.printTo(body, sizeof(body));
 
   //Imposta l'url della richiesta
-  http.begin("http://tesinaiot.altervista.org/api/measurements");
+  http.begin("http://thermostat.nicolal.tk/api/measurements");
 
   //Invia la richiesta di tipo POST con la string JSON
   int httpCode = http.POST(String(body));
@@ -44,7 +44,7 @@ struct command getCommandFromServer(){
     Serial.println("Getting command");
 
     //Sets the connection url
-    http.begin("http://tesinaiot.altervista.org/api/controls");
+    http.begin("http://thermostat.nicolal.tk/api/controls");
 
     //Makes the GET (rekt) request
     int httpCode = http.GET();
